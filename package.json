@@ -1,6 +1,6 @@
 {
   "name": "@conemlabs/msal-auth-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready MSAL authentication library for React and Angular applications",
   "type": "module",
   "main": "dist/index.js",
