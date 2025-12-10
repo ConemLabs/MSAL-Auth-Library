@@ -62,7 +62,6 @@
     "@angular/core": ">=12.0.0",
     "@angular/common": ">=12.0.0",
     "@angular/router": ">=12.0.0",
-    "@angular/common/http": ">=12.0.0",
     "rxjs": ">=6.0.0"
   },
   "peerDependenciesMeta": {
@@ -73,9 +72,6 @@
       "optional": true
     },
     "@angular/router": {
-      "optional": true
-    },
-    "@angular/common/http": {
       "optional": true
     },
     "rxjs": {
