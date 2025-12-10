@@ -40,10 +40,10 @@
     "msal",
     "authentication",
     "react",
+    "angular",
     "microsoft",
     "azure-ad",
     "oauth",
-    "azure-devops",
     "typescript"
   ],
   "author": "Conem Labs",

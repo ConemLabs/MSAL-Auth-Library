@@ -1,20 +1,3 @@
-# msal-auth-library
-
-## Publishing
-
-This repository includes a GitHub Actions workflow that builds the package on pushes to the `main` branch, bumps the patch version, creates a git tag, and publishes the package to npm.
-
-Requirements:
-- Create a repository secret named `NPM_TOKEN` containing a scoped npm token with publish rights.
-- Ensure the package `name` and `publishConfig` in `package.json` (if present) are correct for your npm registry.
-
-Behavior:
-- On push to `main` the workflow runs `npm ci` and `npm run build`.
-- It then runs `npm version patch` which creates a new commit and tag like `v1.0.1`.
-- The workflow pushes the new tag and runs `npm publish` using `NODE_AUTH_TOKEN` set from the `NPM_TOKEN` secret.
-
-To allow the workflow to push tags the default `GITHUB_TOKEN` permissions are used; if you restrict them in your organization you may need to allow `contents: write`.
-
 # MSAL Auth Library
 
 Production-ready authentication library for **React** and **Angular** applications using Microsoft Authentication Library (MSAL). Simplifies Azure AD authentication with automatic token refresh, route protection, and customizable UI.
@@ -29,7 +12,6 @@ Production-ready authentication library for **React** and **Angular** applicatio
 - ✅ **Custom UI Support** - Complete control over authentication UI
 - ✅ **Route Protection** - Guards for authenticated routes
 - ✅ **HTTP Interceptor** - Auto-inject bearer tokens (Angular)
-- ✅ **Iframe Support** - Works in Azure DevOps extensions
 - ✅ **TypeScript** - Full type safety
 - ✅ **Popup & Redirect Flows** - Choose what works best
 - ✅ **Error Recovery** - Graceful handling of auth failures
@@ -305,7 +287,6 @@ Or use a **custom wrapper** for complete control:
 - ✅ Silent refresh with no user interruption
 - ✅ Graceful error handling and recovery
 - ✅ Support for Azure AD multi-factor authentication
-- ✅ Works in iframe contexts (Azure DevOps extensions)
 
 ## 🏗️ Project Structure
 
@@ -342,11 +323,10 @@ npm link @conemlabs/msal-auth-library
 
 - [Basic React App](examples/basic-react-app.tsx)
 - [Custom Wrapper Component](examples/custom-wrapper.tsx)
-- [Angular App](examples/angular-app.ts)
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! Please open an issue or submit a pull request on GitHub.
 
 ## 📄 License
 
@@ -356,13 +336,22 @@ MIT © Conem Labs
 
 - [Azure AD Documentation](https://docs.microsoft.com/en-us/azure/active-directory/)
 - [MSAL.js Documentation](https://github.com/AzureAD/microsoft-authentication-library-for-js)
-- [Azure DevOps Extensions](https://learn.microsoft.com/en-us/azure/devops/extend/)
 
 ## 💬 Support
 
 - 📧 Email: support@conemlabs.com
 - 🐛 Issues: [GitHub Issues](https://github.com/conemlabs/msal-auth-library/issues)
 - 📖 Docs: [Documentation](https://github.com/conemlabs/msal-auth-library#readme)
+
+## 📦 Publishing
+
+The repository uses GitHub Actions to automatically publish to npm on pushes to `main`. The workflow:
+- Builds the package with `npm run build`
+- Bumps the patch version (e.g., `v1.0.1`)
+- Creates a git tag and pushes it
+- Publishes to npm using the `NPM_TOKEN` secret
+
+**Setup:** Add an `NPM_TOKEN` secret in your GitHub repository settings with a scoped npm automation token.
 
 ---
 

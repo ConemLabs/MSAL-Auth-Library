@@ -358,7 +358,7 @@ async function callAPI() {
 import { useAuthentication } from '@conemlabs/msal-auth-library';
 
 function MyComponent() {
-  const { authState, actions, IS_IN_IFRAME } = useAuthentication(authConfig);
+  const { authState, actions } = useAuthentication(authConfig);
 
   if (authState.isInitializing) {
     return <div>Loading...</div>;
@@ -372,8 +372,7 @@ function MyComponent() {
     <div>
       <p>Welcome! JWT: {authState.jwtToken}</p>
       <button onClick={actions.handleLogout}>Sign Out</button>
-      <button onClick={actions.handleForceRefresh}>Refresh Page</button>
-      {IS_IN_IFRAME && <p>Running in iframe (Azure DevOps mode)</p>}
+      <button onClick={actions.handleForceRefresh}>Refresh Token</button>
     </div>
   );
 }
@@ -465,13 +464,13 @@ const config = {
 
 **Use Popup (`flowType: 'popup'`):**
 - ✅ Better UX (no page reload)
-- ✅ Required for iframes (Azure DevOps extensions)
 - ✅ Keeps user's place in the app
+- ✅ Works in iframe contexts
 
 **Use Redirect (`flowType: 'redirect'`):**
 - ✅ Better mobile experience
 - ✅ Works when popups are blocked
-- ✅ Simpler flow
+- ✅ Simpler authentication flow
 
 ---
 
