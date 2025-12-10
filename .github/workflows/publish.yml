@@ -29,16 +29,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Bump patch version, commit and tag
-        if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/release/')
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          npm version patch -m "chore: release v%s [skip ci]"
-          git push --follow-tags
-
       - name: Publish to npm
         if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/release/')
         env:
