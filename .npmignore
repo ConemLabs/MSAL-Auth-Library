@@ -1,0 +1,32 @@
+# Source files
+src/
+examples/
+
+# Configuration files
+tsconfig.json
+rollup.config.js
+.eslintrc.json
+.gitignore
+
+# Development files
+node_modules/
+*.log
+.DS_Store
+
+# Documentation (keep README.md)
+ARCHITECTURE.md
+CONTRIBUTING.md
+PUBLISHING.md
+QUICKSTART.md
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
