@@ -446,10 +446,3 @@ For questions or issues:
 ## License
 
 MIT License - See LICENSE file
-
----
-
-**Created**: December 7, 2025
-**Status**: Ready for testing and publishing
-**Location**: `c:\dev\msal-react-auth-library\`
-**Original Project**: No changes made to `c:\dev\Bison\FeaturePeer.AdoAdvisor\`
